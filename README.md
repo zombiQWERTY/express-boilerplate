@@ -242,5 +242,5 @@ cd ./frontend && yarn dev
 
 #### Production (before you need to run mongod service)
 ```bash
-yarn start && cd ./frontend && yarn build
+yarn startProd
 ```
