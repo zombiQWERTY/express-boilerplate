@@ -1,0 +1,13 @@
+{
+    "name": "ApiDoc",
+    "version": "1.0.0",
+    "description": "Документация API",
+    "title": "Application",
+    "url" : "https://productiondomain.com",
+    "sampleUrl": "http://localhost:3000",
+    "template": {
+        "forceLanguage": "en",
+        "withCompare": false,
+        "withGenerator": true
+    }
+}

@@ -1,0 +1,21 @@
+node_modules/
+dist/
+coverage/
+build/
+
+.idea
+.DS_Store
+npm-debug.log
+
+log/
+doc/
+uploads?
+public/uploads?/*
+tmp/
+
+frontend/public/assets
+
+syntax: glob
+*.heapsnapshot
+*.log
+/public

@@ -1,0 +1,54 @@
+import chai        from 'chai';
+import UserManager from '../../../src/server/manager/UserManager';
+
+const expect = chai.expect;
+
+export default function() {
+    const manager = new UserManager();
+
+    describe('validateBirthdate', () => {
+        it('birthdate format must be like "DD/MM/YYYY"', () => {
+            expect(manager.validateBirthdate('10/12/2012')).to.be.true;
+            expect(manager.validateBirthdate('10-10-2010')).to.be.false;
+            expect(manager.validateBirthdate('40/10/2010')).to.be.false;
+            expect(manager.validateBirthdate('10/40/2010')).to.be.false;
+            expect(manager.validateBirthdate('10/12/20100')).to.be.false;
+        });
+    });
+
+    describe('prepareBirthdate', () => {
+        /**
+         * Must return an instance of Date
+         */
+        it('call with valid params', () => {
+            expect(manager.prepareBirthdate('10/12/2012')).to.be.an.instanceof(Date);
+        });
+
+        /**
+         * Must return null
+         */
+        it('call with invalid params', () => {
+            expect(manager.prepareBirthdate('32/12/2012')).to.be.null;
+        });
+    });
+
+    // describe('prepareModel', () => {
+    //     it('return an instance of UserModel', () => {
+    //
+    //     });
+    // });
+
+    // describe('getData', async() => {
+    //     let user = null;
+    //
+    //     try {
+    //         user = UserModel.findById('__userId__').exec()
+    //     } catch (e) {
+    //
+    //     }
+    //
+    //     it('return object has "age"', () => {
+    //         expect(manager.getData(user).age).toBeDefined();
+    //     });
+    // });
+};

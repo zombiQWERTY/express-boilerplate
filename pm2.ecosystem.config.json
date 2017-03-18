@@ -1,0 +1,7 @@
+{
+    "apps": [{
+        "name": "Application",
+        "script": "./dist/src/index.js",
+        "args": "--protocol=https --domain=productiondomain.com --port=80 --startport=3000"
+    }]
+}
